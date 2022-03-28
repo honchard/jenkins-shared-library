@@ -10,7 +10,8 @@ def call(body) {
     stages {
       stage('Checkout') {
         steps {
-          checkout scm
+          //checkout scm
+          echo "checkout"
         }
       }
       stage('Get Dockerfile') {
@@ -25,9 +26,9 @@ def call(body) {
         steps {
           script {
             sh '''
-              docker version
-              docker build -t ealebed/hellonode:latest .
-              docker image ls
+              echo "version"
+              echo "build -t ealebed/hellonode:latest ."
+              echo "image ls"
             '''
           }
         }
